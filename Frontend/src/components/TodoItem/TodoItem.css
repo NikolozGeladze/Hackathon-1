@@ -1,0 +1,101 @@
+.item {
+    background-color: #F2F2F2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 5px;
+}
+
+.checkbox-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="checkbox"] {
+    background-color: #109308;
+    transition: 1.5s;
+    appearance: none;
+    width: 45px;
+    height: 38.4px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px 0px 0px 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-title label {
+    width: 45px;
+    height: 38.4px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #109308;
+}
+
+[type="checkbox"]::before {
+    content: '';
+    width: 7px;
+    height: 13px;
+    color: white;
+    border: 4px solid transparent;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg) scale(1);
+    margin-bottom: 5px;
+}
+
+[type="checkbox"]:checked:before {
+    border-color: white;
+}
+
+.item p {
+    padding: 10px;
+    max-width: 190px;
+    overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.item p.checkbox-checked {
+    font-style: italic;
+    color: #a0a0a0 !important;
+    text-decoration: line-through !important;
+}
+
+.date {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    color: #8f8f8f;
+}
+
+.action-btn-div {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 45px;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    border-radius: 3px;
+}
+
+.edit-btn {
+    background-color: #F5B92D;
+    border-radius: 0 3px 3px 0;
+}
