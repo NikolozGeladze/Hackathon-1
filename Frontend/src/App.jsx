@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState([]);
 
   async function getTodoItems() {
-    const response = await axios.get('http://localhost:1234/api/todos');
+    const response = await axios.get('http://localhost:5000/api/todos');
     setData(response.data);
   }
 
@@ -18,7 +18,7 @@ function App() {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:1234/api/todos', {
+      const response = await axios.post('http://localhost:5000/api/todos', {
         title,
         completed: false
       });
@@ -35,7 +35,7 @@ function App() {
 
   async function deleteTodoItem(id) {
     toast.promise(
-      axios.delete(`http://localhost:1234/api/todos/${id}`),
+      axios.delete(`http://localhost:5000/api/todos/${id}`),
       {
         pending: 'Pending . . .',
         success: 'Item Successfully Deleted',
@@ -46,7 +46,7 @@ function App() {
 
   async function editTodoItem(id, updatedData) {
     try {
-      const response = await axios.put(`http://localhost:1234/api/todos/${id}`, updatedData)
+      const response = await axios.put(`http://localhost:5000/api/todos/${id}`, updatedData)
       toast.success(response.data.message);
       getTodoItems();
     } catch (err) {

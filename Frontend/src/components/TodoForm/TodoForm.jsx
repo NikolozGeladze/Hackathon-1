@@ -22,7 +22,7 @@ export default function TodoForm({ data, addTodoItem, deleteTodoItem, editTodoIt
     }
 
     function startEditing(todo) {
-        setEditingId(todo.id);
+        setEditingId(todo._id);
         setNewTodo(todo.title);
     }
 

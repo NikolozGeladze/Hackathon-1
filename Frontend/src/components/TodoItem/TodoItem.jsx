@@ -10,7 +10,7 @@ export default function TodoItem({ todoItem, deleteTodoItem, startEditing, editT
     const handleToggle = () => {
         const newValue = !checked;
         setChecked(newValue);
-        editTodoItem(todoItem.id, { completed: newValue });
+        editTodoItem(todoItem._id, { completed: newValue, title: todoItem.title });
     };
     return (
         <>
@@ -32,7 +32,7 @@ export default function TodoItem({ todoItem, deleteTodoItem, startEditing, editT
                 </div>
 
                 <div className="action-btn-div">
-                    <button className='action-btn delete-btn' onClick={() => deleteTodoItem(todoItem.id)}>
+                    <button className='action-btn delete-btn' onClick={() => deleteTodoItem(todoItem._id)}>
                         <FaTrash />
                     </button>
                     <button className='action-btn edit-btn' onClick={() => startEditing(todoItem)}>
